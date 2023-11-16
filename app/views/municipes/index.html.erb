@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Municipes</h1>
+
+<%= link_to "Novo Municipe", new_municipe_path %>
+
+<hr/>
+
+<%= form_tag('/municipes', method: "GET") do %>
+  <%= text_field '', :municipe_busca, {name: 'municipe[busca]', class: "form-control"} %>
+  <br/>
+  <%= submit_tag("Buscar", class: 'btn btn-primary') %>
+  <%= link_to 'Limpar Filtro', '/', class: 'btn btn-primary' %>
+<% end %>
+<br/>
+<hr/>
+
+<div id="municipes">
+  <% @municipes.each do |municipe| %>
+    <%= render municipe %>
+    <p>
+      <%= link_to "Mostrar", municipe %>
+    </p>
+    <hr/>
+  <% end %>
+</div>
+

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h3>Municipe</h3>
+
+<%= render @municipe %>
+
+<hr/>
+<h4> Endereco </h3>
+<%= render partial: 'enderecos/endereco', locals: { endereco: @municipe.endereco} %>
+
+<div>
+  <%= link_to "Edit this municipe", edit_municipe_path(@municipe) %> |
+  <%= link_to "Back to municipes", municipes_path %>
+</div>
